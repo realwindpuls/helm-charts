@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  argocd-project:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-10-22T08:40:50.405584953Z"
+    description: A Helm chart to deploy projects in ArgoCD
+    digest: b771f9f4957641a0c4bf4fa9757d87267f07186b20fa427a7aad935cdb750332
+    name: argocd-project
+    type: application
+    urls:
+    - https://github.com/realwindpuls/helm-charts/releases/download/argocd-project-0.1.1/argocd-project-0.1.1.tgz
+    version: 0.1.1
+generated: "2024-10-22T08:40:50.40561513Z"
