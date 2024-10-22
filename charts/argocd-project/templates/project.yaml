@@ -1,0 +1,26 @@
+{{- range $projectName, $project := .Values.projects }}
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ $projectName }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "-5"
+spec:
+  sourceRepos:
+    - {{ $project.git.repoURL | quote }}
+  {{- if $project.allowedUrls }}
+    {{- range $allowedUrl := $project.allowedUrls }}
+    - {{ $allowedUrl | quote }}
+    {{- end }}
+  {{- else }}
+    - "*"
+  {{- end }}
+  destinations:
+    - namespace: '*'
+      server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+---
+{{- end }}

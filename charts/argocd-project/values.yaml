@@ -1,0 +1,15 @@
+projects:
+  application-charts: # name of the project (displayed inside argocd)
+    # values: # custom values for the project
+    #   stage: staging # set this to enable stage.values.yaml
+    
+    git: # configuration for git-repo
+      repoURL: https://gitlab.com/windpuls1/windpuls-helm-charts.git # URL of the git repository
+      username: gitlab+deploy-token-5320851 # username for the git repository (mandatory if the repository is private)
+      password: gldt-cSiBXZTvAknbHi-9UBKu # password for the git repository (mandatory if the repository is private)
+      branch: # branch of the git repository (default: main)
+      path: internal-services # path to the directory containing the helm chart (default: /)
+      base64PrivateKey: # base64 encoded private key for the git repository (alternative to username/password)
+    
+    allowedUrls: # allowed URLs for the project
+      - '*' # allow all URLs
