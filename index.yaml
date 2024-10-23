@@ -1,5 +1,19 @@
 apiVersion: v1
 entries:
+  argocd:
+  - apiVersion: v2
+    created: "2024-10-23T11:57:11.6164632Z"
+    dependencies:
+    - name: argo-cd
+      repository: https://charts.bitnami.com/bitnami
+      version: 7.0.18
+    description: A Helm chart to deploy ArgoCD with a custom Ingress resource
+    digest: 4cbe196bb2a21fa1e389107371b1dfa5058894536102e322a4d5da22ae408f23
+    name: argocd
+    type: application
+    urls:
+    - https://github.com/realwindpuls/helm-charts/releases/download/argocd-0.1.0/argocd-0.1.0.tgz
+    version: 0.1.0
   argocd-project:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -11,4 +25,4 @@ entries:
     urls:
     - https://github.com/realwindpuls/helm-charts/releases/download/argocd-project-0.1.1/argocd-project-0.1.1.tgz
     version: 0.1.1
-generated: "2024-10-22T08:40:50.40561513Z"
+generated: "2024-10-23T11:57:11.616473179Z"
